@@ -68,7 +68,7 @@ Endpoint: `POST /api/session/book`
    }
 
 
-   ```bash
+
    {
      "userId": 2,
      "mentorId": 102,
