@@ -56,7 +56,7 @@ The application uses an H2 in-memory database by default.
 ## API Endpoints
 
 1. Book a Session
-Endpoint: `POST /api/sessions/book`
+Endpoint: `POST /api/session/book`
 
    ```bash
    {
@@ -66,3 +66,19 @@ Endpoint: `POST /api/sessions/book`
      "frequency": "weekly",
      "bookedAt": "2023-12-06T10:05:00"
    }
+
+
+   ```bash
+   {
+     "userId": 2,
+     "mentorId": 102,
+     "sessionDate": "2023-12-25T12:00:00",
+     "frequency": "biweekly",
+     "bookedAt": "2023-12-07T10:05:00"
+   }
+
+
+2. Cancel a Session
+Endpoint: `DELETE /api/session/cancel`
+
+
