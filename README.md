@@ -52,4 +52,17 @@ The application uses an H2 in-memory database by default.
 - Password: 
 
 
-   
+
+## API Endpoints
+
+1. Book a Session
+Endpoint: `POST /api/sessions/book`
+
+   ```bash
+   {
+     "userId": 1,
+     "mentorId": 101,
+     "sessionDate": "2023-12-20T12:30:00",
+     "frequency": "weekly",
+     "bookedAt": "2023-12-06T10:05:00"
+   }
