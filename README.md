@@ -27,8 +27,10 @@ Java Backend Assignment (Spring Boot): Develop REST APIs for booking consultatio
    cd Assignment-LPT
 
 3.Build the application:
+
    ```bash
    mvn clean install
+
 
 4.Run the application
 
