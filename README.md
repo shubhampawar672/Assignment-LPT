@@ -44,13 +44,12 @@ The application will be running on http://localhost:8080.
 
 
 
-##Database Configuration
+## Database Configuration
 The application uses an H2 in-memory database by default. You can access the H2 console at http://localhost:8080/h2-console with the following credentials:
 
-# H2 Configuration
-spring.datasource.url=jdbc:h2:mem:SessionDB
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
+spring.datasource.url=`jdbc:h2:mem:SessionDB`
+spring.datasource.driverClassName=`org.h2.Driver`
+spring.datasource.username=`sa`
 spring.datasource.password=
 
 
