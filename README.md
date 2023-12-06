@@ -79,6 +79,17 @@ Endpoint: `POST /api/session/book`
 
 
 2. Cancel a Session
-Endpoint: `DELETE /api/session/cancel`
+Endpoint: `DELETE /api/session/cancel/{sessionId}`
 
 
+3. Reschedule a Session
+Endpoint: `PUT /api/session/reschedule/{sessionId}`
+
+   ```bash
+   {
+     "userId": 1,
+     "mentorId": 101,
+     "sessionDate": "2023-12-22T10:30:00",
+     "frequency": "weekly",
+     "bookedAt": "2023-12-07T10:05:00"
+   }
