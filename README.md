@@ -20,3 +20,11 @@ Java Backend Assignment (Spring Boot): Develop REST APIs for booking consultatio
 
    ```bash
    git clone https://github.com/your-username/session-scheduling-app.git
+
+   cd session-scheduling-app
+
+   mvn clean install
+
+
+
+   
