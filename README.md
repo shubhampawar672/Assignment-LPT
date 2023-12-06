@@ -21,18 +21,22 @@ Java Backend Assignment (Spring Boot): Develop REST APIs for booking consultatio
    ```bash
    git clone https://github.com/shubhampawar672/Assignment-LPT.git
    
-2.Change directory to the project folder:
+2. Change directory to the project folder:
 
    ```bash
    cd Assignment-LPT
 
-3.Build the application:
+
+3. Build the application:
 
    ```bash
    mvn clean install
 
 
-4.Run the application
+
+4. Run the application
+
+
 
 The application will be running on http://localhost:8080.
 
