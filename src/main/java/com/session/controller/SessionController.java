@@ -42,6 +42,7 @@ public class SessionController {
 	@PutMapping("/reschedule/{sessionId}")
 	ResponseEntity<Object>rescheduleSession(@RequestBody Meeting session, @PathVariable(name="sessionId") Long sessionId)
 	{
+
 		return sessionService.rescheduleSession(session,sessionId);
 	}
 	

@@ -32,8 +32,9 @@ public interface SessionRepository extends JpaRepository<Meeting, Long>{
 	void deleteByUserIdAndMentorIdAndSessionDateAndFrequencyAndBookedAt(Long userId, Long mentorId,
 			LocalDateTime sessionDate, String frequency, LocalDateTime bookedAt);
 
-	Optional<Meeting> findMostRecentSessionByMentorId(Long consultantId);
-
+	@Query("SELECT COUNT(m) FROM Meeting m WHERE m.mentorId = :mentorId AND m.sessionDate BETWEEN :startTime AND :endTime")
+    int countConflictingSessions(@Param("mentorId") Long mentorId, @Param("startTime") LocalDateTime startTime, 
+    								@Param("endTime") LocalDateTime endTime);
 
 
 

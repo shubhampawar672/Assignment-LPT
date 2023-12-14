@@ -53,7 +53,7 @@ public class SessionService {
 	    LocalDateTime requestedSessionDate = session.getSessionDate();
 
 	    // Define the minimum time gap in hours
-	    int minTimeGapInHours = 3;
+	    int minTimeGapInHours = 2;
 
 	    // Check if there's any existing session for the mentor within the time gap
 	    boolean isSessionAvailable = isSessionAvailable(mentorId, requestedSessionDate, minTimeGapInHours);
@@ -119,23 +119,18 @@ public class SessionService {
 	
 	
 	
-	//check if session is available for request sessionTime with given mentor 
+	//check if session is available for request sessionTime with given consultant 
 	public boolean isSessionAvailable(Long mentorId, LocalDateTime requestedSessionDate, int minTimeGapInHours) {
 	    // Find the most recent session for the consultant
-	    Optional<Meeting> mostRecentSession = sessionRepository.findMostRecentSessionByMentorId(mentorId);
+		
+		LocalDateTime startTime = requestedSessionDate.minusHours(minTimeGapInHours);
+		LocalDateTime endTime = requestedSessionDate.plusHours(minTimeGapInHours);
 
-	    if (mostRecentSession.isPresent()) {
-	        LocalDateTime mostRecentSessionDate = mostRecentSession.get().getSessionDate();
-
-	        // Calculate the time gap between the most recent session and the requested session
-	        long timeGapInHours = ChronoUnit.HOURS.between(mostRecentSessionDate, requestedSessionDate);
-
-	        // Check if the time gap is greater than or equal to the minimum required gap
-	        return timeGapInHours >= minTimeGapInHours;
-	    }
-
-	    // If there's no existing session, the session is available
-	    return true;
+		int conflictingSessionsCount = sessionRepository.countConflictingSessions(mentorId, startTime, endTime);
+		
+		boolean flag=conflictingSessionsCount>0?false:true;
+		return flag;
+			
 	}
 
 	
